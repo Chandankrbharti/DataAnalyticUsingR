@@ -5,7 +5,7 @@ mean(1:10)
 
 #Variable assignment
 a = 5
-a <- 5
+a <- 5x=
 5+2 -> a
 a
 b <- 4
@@ -341,6 +341,9 @@ x[[c(1, 3)]]
 
 #Removing NA Values
 
+
+
+
 x <- c(1, 2, NA, 4, NA, 5)
 bad <- is.na(x)
 print(bad)
@@ -358,6 +361,7 @@ x[good]
 y[good]
 
 airquality
+
 is.na(airquality$Solar.R)
 colSums(is.na(airquality))
 which(is.na(airquality$Solar.R))

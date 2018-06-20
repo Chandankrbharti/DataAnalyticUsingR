@@ -5,9 +5,14 @@ p <- entropy(0.5)
 p
 plot(p)
 
+install.packages("tree")
+
 library(caTools)
 library(mlbench)
+data(PimaIndiansDiabetes)
 View(PimaIndiansDiabetes)
+#inavlid <- 0
+table(PimaIndiansDiabetes$diabetes)
 split <- sample.split(PimaIndiansDiabetes$diabetes, SplitRatio = 0.75)
 traindt <- subset( PimaIndiansDiabetes, split==TRUE)
 testdt <- subset(PimaIndiansDiabetes, split == F)
@@ -25,13 +30,16 @@ dt1
 testdt$predicted_values <- predict(dt1, newdata = testdt, type = "class")
 View(testdt)
 
+dim(testdt)
+
 table(testdt$diabetes)
+table(testdt$predicted_values)
 
 
-#(testdt$diabetes==testdt$predicted_values)*100/nrow(testdt)
+(testdt$diabetes==testdt$predicted_values)*100/nrow(testdt)
 
 table(testdt$predicted_values, testdt$diabetes)
-(118+36)/(192) # Accuracy
+(98+43)/(98+24+27+43) # Accuracy
 
 (31+7)/(192) # Missclassification
 
