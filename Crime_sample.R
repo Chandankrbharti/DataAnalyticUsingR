@@ -1,0 +1,14 @@
+library(randomForest)
+library(leaflet)
+library(tree)
+dim(traindata)
+Data_url<-"C:/Users/Administrator/Documents/Crime_Sample.csv"
+traindata<-read.csv(Data_url)
+View(traindata)
+summary(traindata)
+colSums(is.na(traindata))
+names(traindata)
+traniData_temp<-traindata[,-c(1,2,14,15,17,18)]
+colSums(is.na(traniData_temp))
+train_data_<-traniData_temp[complete.cases(traniData_temp),]
+View(train_data_)
