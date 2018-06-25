@@ -61,7 +61,7 @@ setup_twitter_oauth(consumerKey,
                     accessToken,
                     accessSecret)
   
-  r_stats <- searchTwitter("societe generale", n=100)
+  r_stats <- searchTwitter("", n=100)
   r_stats
   class(r_stats)
   r_stats.df = twListToDF(r_stats) 
